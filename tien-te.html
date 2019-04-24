@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyển đổi tiền tệ</title>
+</head>
+<body>
+
+Amount:
+<br/>
+<input type="number" name="" id="nhaptien">
+From Currency
+<select id="moneyTo">
+    <option value="USD">USD</option>
+    <option value="VND">Việt Nam</option>
+</select>
+To Currency
+<select id="moneyFrom">
+    <option value="VND">Việt Nam</option>
+    <option value="USD">USD</option>
+</select>
+<button onclick="convert()">Convert</button>
+<script>
+    function convert() {
+        let moneyTo = document.getElementById("moneyTo").value;
+        let moneyFrom = document.getElementById("moneyFrom").value;
+        let tien = document.getElementById("nhaptien").value;
+        let t= parseFloat(tien);
+        if (moneyTo === "VND" && moneyFrom === "USD") {
+            let a = t/23000;
+            alert("So tien USD la: "+a);
+        }
+        else if (moneyTo === "USD" && moneyFrom === "VND") {
+            let b = t*23000;
+            alert("So tien la: "+b);
+        }
+        else {
+            t=tien
+            alert(t);
+        }
+
+    }
+
+</script>
+</body>
+</html>
