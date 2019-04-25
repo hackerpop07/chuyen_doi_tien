@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền</title>
+</head>
+<body>
+<input type="number" id="input">
+From
+<select id="from">
+    <option value="23223">Việt Nam</option>
+    <option value="1">USD</option>
+    <option value="0,89623">EUR</option>
+    <option value="32,0554">Baht Thái</option>
+    <option value="64,5743">Rúp Nga</option>
+    <option value="1,0206">Thụy Sỹ (CHF)</option>
+    <option value="0,77471">Bảng Anh</option>
+    <option value="47,8502">Bảng Sudan (SDG)</option>
+    <option value="1199,20">Iran</option>
+    <option value="17,1769">Ai Cập</option>
+</select>
+To
+<select id="to">
+    <option value="1">USD</option>
+    <option value="23223">Việt Nam</option>
+    <option value="0,89623">EUR</option>
+    <option value="32,0554">Baht Thái</option>
+    <option value="64,5743">Rúp Nga</option>
+    <option value="1,0206">Thụy Sỹ (CHF)</option>
+    <option value="0,77471">Bảng Anh</option>
+    <option value="47,8502">Bảng Sudan (SDG)</option>
+    <option value="1199,20">Iran</option>
+    <option value="17,1769">Ai Cập</option>
+</select>
+<button onclick="convert()">Convert</button>
+<br>
+Số Tiền là: <p id="tienra"></p>
+<script>
+    function convert() {
+        let to = parseFloat(document.getElementById("to").value);
+        let from = parseFloat(document.getElementById("from").value);
+        let input = parseFloat(document.getElementById("input").value);
+        if (input > 0) {
+            let n = (input * to) / from;
+            let n2 = parseFloat(n);
+            document.getElementById("tienra").innerHTML = n2;
+        } else {
+            alert("Ngân Hàng địa phủ mới chuyển được lại tiền này")
+        }
+    }
+</script>
+</body>
+</html>
